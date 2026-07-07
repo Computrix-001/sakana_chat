@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Fugu Chat</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<div class="app">
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="wordmark">
+        <svg class="fugu-icon" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+          <g class="fugu-spines" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none">
+            <path d="M11 15 L8 11 M17 10 L15 5 M25 9 L25 4 M31 8 L33 3 M33 11 L36 6 M8 25 L2 25 M9 35 L5 39"/>
+          </g>
+          <ellipse cx="23" cy="25" rx="16" ry="13" fill="currentColor" fill-opacity="0.18" stroke="currentColor" stroke-width="2"/>
+          <path d="M39 25 L47 18 L47 32 Z" fill="currentColor" fill-opacity="0.6"/>
+          <circle cx="17" cy="21" r="2.2" fill="#e9eef1"/>
+        </svg>
+        <span>Fugu Chat</span>
+      </div>
+    </div>
+    <button id="newChatBtn" class="new-chat-btn">+ New chat</button>
+    <div id="conversationList" class="conversation-list"></div>
+  </aside>
+
+  <main class="chat-panel">
+    <header class="chat-header">
+      <button id="menuBtn" class="icon-btn" title="Toggle sidebar">☰</button>
+      <div class="header-controls">
+        <select id="modelSelect" class="select" title="Model"></select>
+        <select id="effortSelect" class="select" title="Reasoning effort"></select>
+        <span id="contextBadge" class="context-badge"></span>
+      </div>
+      <button id="settingsBtn" class="icon-btn" title="System prompt">⚙</button>
+    </header>
+
+    <div id="systemPromptPanel" class="system-prompt-panel hidden">
+      <label for="systemPromptInput">System prompt</label>
+      <textarea id="systemPromptInput" rows="2" placeholder="Optional — applies only to this conversation. e.g. Answer concisely and show your work."></textarea>
+    </div>
+
+    <div id="messages" class="messages"></div>
+
+    <form id="composerForm" class="composer">
+      <div id="imagePreview" class="image-preview hidden">
+        <img id="imagePreviewImg" alt="attachment preview" />
+        <button type="button" id="removeImageBtn" class="remove-image-btn">×</button>
+      </div>
+      <div class="composer-row">
+        <button type="button" id="attachBtn" class="icon-btn" title="Attach image">📎</button>
+        <input type="file" id="fileInput" accept="image/*" class="hidden" />
+        <textarea id="messageInput" placeholder="Message Fugu…" rows="1"></textarea>
+        <button type="submit" id="sendBtn" class="send-btn" title="Send">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12 L20 12 M13 5 L20 12 L13 19"/></svg>
+        </button>
+        <button type="button" id="stopBtn" class="stop-btn hidden" title="Stop generating">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><rect x="5" y="5" width="14" height="14" rx="2"/></svg>
+        </button>
+      </div>
+    </form>
+  </main>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
