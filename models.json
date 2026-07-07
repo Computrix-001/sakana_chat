@@ -1,0 +1,37 @@
+{
+  "models": [
+    {
+      "slug": "fugu",
+      "display_name": "Fugu",
+      "context_window": 1000000,
+      "input_modalities": ["text", "image"],
+      "default_effort": "high",
+      "reasoning_levels": [
+        { "effort": "high", "description": "Deep reasoning for complex problems" },
+        { "effort": "xhigh", "description": "Go Brrrr for complex problems" }
+      ]
+    },
+    {
+      "slug": "fugu-ultra",
+      "display_name": "Fugu Ultra",
+      "context_window": 1000000,
+      "input_modalities": ["text", "image"],
+      "default_effort": "xhigh",
+      "reasoning_levels": [
+        { "effort": "high", "description": "Deep reasoning for complex problems" },
+        { "effort": "xhigh", "description": "Go Brrrr for complex problems" }
+      ]
+    },
+    {
+      "slug": "fugu-ultra-20260615",
+      "display_name": "Fugu Ultra (pinned 2026-06-15)",
+      "context_window": 1000000,
+      "input_modalities": ["text", "image"],
+      "default_effort": "xhigh",
+      "reasoning_levels": [
+        { "effort": "high", "description": "Deep reasoning for complex problems" },
+        { "effort": "xhigh", "description": "Go Brrrr for complex problems" }
+      ]
+    }
+  ]
+}
